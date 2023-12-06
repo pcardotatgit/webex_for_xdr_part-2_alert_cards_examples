@@ -87,8 +87,6 @@ attachment={
 
 headers = {'Authorization': 'Bearer ' + ACCESS_TOKEN,
            'Content-type': 'application/json;charset=utf-8'}
-#post_data = {'roomId': ROOM_ID,'text': MESSAGE_TEXT}
-#post_data = {'roomId': ROOM_ID,'attachments': attachment3}
 response = requests.post(URL, json=attachment,headers=headers)
 if response.status_code == 200:
     # Great your message was posted!
