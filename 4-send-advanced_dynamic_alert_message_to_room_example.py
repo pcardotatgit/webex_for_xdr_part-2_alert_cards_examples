@@ -113,6 +113,34 @@ def create_card_content(alert_message,target_file,observables_file):
                                     "style": "expanded",
                                     "isMultiSelect": True,
                                     "choices": targets
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Isolate in ? :",
+                                    "color": "Warning",
+                                    "size": "Medium",
+                                    "wrap": True
+                                },                               
+                                {
+                                    "type": "Input.ChoiceSet",
+                                    "id": "isolation_points", 
+                                    "isMultiSelect": True,
+                                    "style": "compact",
+                                    "choices": [
+                                        {
+                                            "title": "Isolate in ISE",
+                                            "value": "ISE"
+                                        },
+                                        {
+                                            "title": "Isolate in Secure Endpoint",
+                                            "value": "CSE"
+                                        },
+                                        {
+                                            "title": "Block in Firewalls",
+                                            "value": "FW"
+                                        }
+                                    ],
+                                    "placeholder": "Isolate in ? :"
                                 }
                             ],
                             "actions": [
@@ -146,7 +174,30 @@ def create_card_content(alert_message,target_file,observables_file):
                                     "style": "expanded",
                                     "isMultiSelect": True,
                                     "choices": observables
-                                }
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "Enforcement Solution :",
+                                    "color": "Warning",
+                                    "size": "Medium",
+                                    "wrap": True
+                                },                                
+                                {
+                                    "type": "Input.ChoiceSet",
+                                    "id": "enforcement_points",  
+                                    "style": "compact",
+                                    "choices": [
+                                        {
+                                            "title": "Isolate in ISE",
+                                            "value": "ISE"
+                                        },
+                                        {
+                                            "title": "Block in Internet Firewalls",
+                                            "value": "FW"
+                                        }
+                                    ],
+                                    "placeholder": "Block in ? :"
+                                }                               
                             ],
                             "actions": [
                                 {
